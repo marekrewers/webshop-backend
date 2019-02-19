@@ -11,4 +11,3 @@ class CardView(viewsets.ModelViewSet):
 class FeaturedCardView(viewsets.ModelViewSet):
     queryset = Card.objects.filter(isFeatured=True)
     serializer_class = CardSerializer
-

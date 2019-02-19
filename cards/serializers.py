@@ -1,9 +1,10 @@
 from rest_framework import serializers
 from .models import Card
+from categories.serializers import CategoriesSerializer
 
 
 class CardSerializer(serializers.ModelSerializer):
-    category_name = serializers.RelatedField(source='category.name', read_only='True')
+    categories = CategoriesSerializer(many=True)
 
     class Meta:
         model = Card
